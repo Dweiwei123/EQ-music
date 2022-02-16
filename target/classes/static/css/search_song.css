@@ -1,0 +1,187 @@
+.search_content {
+    width: 1000px;
+    min-height: 500px;
+    margin: 0 auto;
+    font: 15px/1.5 \5FAE\8F6F\96C5\9ED1,simsun,sans-serif;
+}
+
+.search_content .search_tab {
+    height: 59px;
+    line-height: 49px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.search_content .search_tab li {
+    float: left;
+    width: 100px;
+    line-height: 60px;
+}
+
+.search_content .search_tab li a {
+    display: block;
+    width: 100px;
+    text-align: center;
+    color: #666;
+    font-size: 16px
+}
+
+.search_content .album_name:hover,.search_content .list_content li:hover .album_name_li,.search_content .search_mv .mv_list li .mv_container .mv_name:hover,.search_content .search_song .similar_singer .singer_name a,.search_content .search_special .list_content li .special_name:hover,.search_content .search_tab li a:hover,.search_content .search_tab li.active a,.search_content .song_name:hover,.search_content .special_name:hover,.search_content .width_f_li:hover,.search_content .width_s_li:hover {
+    color: #14a9ff
+}
+
+.search_content .search_tab li.active {
+    color: #14A9FE;
+    height: 59px;
+    border-bottom: 2px solid #14a9ff;
+}
+
+.search_content .list_header {
+    background-color: #f8f8f8
+}
+
+.search_content .list_header li {
+    float: left;
+    height: 54px;
+    line-height: 54px;
+    color: #999
+}
+
+.search_content .list_header li .checkall {
+    float: left;
+    padding-left: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin: 20px 10px 0 20px;
+    background-position: -64px -56px;
+    cursor: pointer
+}
+
+.search_content .list_header li:hover {
+    color: #999
+}
+
+.search_content .list_header li.width_s_li {
+    text-indent: 5px
+}
+
+.search_content .list_header li.width_t_li {
+    text-indent: 6px
+}
+
+.search_content .list_content li {
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+    padding: -3px 0;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+}
+
+.search_content .list_content li:hover {
+    background-color: #f5f8fb;
+    color: #14a9ff
+}
+
+.search_content .list_content li:hover .play-item,.search_content .search_mv .mv_list li .mv_container a:hover .mv_play,.search_content .search_mv .mv_list li .mv_container a:hover .mv_shadow {
+    visibility: visible
+}
+
+.search_content .list_content li .checkbox {
+    margin: 9px 10px 10px 20px;
+}
+
+.search_content .list_content li .play-item {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    right: 75px;
+    visibility: hidden;
+    cursor: pointer
+}
+
+.search_content .list_content li .play-item span.icon_download,.search_content .list_content li .play-item span.icon_play,.search_content .list_content li .play-item span.icon_share {
+    position: relative;
+    top: 2px;
+    padding-left: 14px;
+    height: 13px;
+    background: url(https://staticssl.kugou.com/common/images/pc_temp_v2/icon_splice.png?20150814) no-repeat;
+    background-position: 0 0
+}
+
+.search_content .list_content li .play-item span.icon_play:hover {
+    background-position: 0 -30px
+}
+
+.search_content .list_content li .play-item span.icon_play:active {
+    background-position: 0 -60px
+}
+
+.search_content .list_content li .play-item span.icon_download,.search_content .list_content li .play-item span.icon_share {
+    padding-left: 16px;
+    background-position: -90px 0
+}
+
+.search_content .list_content li .play-item span.icon_download:hover {
+    background-position: -90px -30px
+}
+
+.search_content .list_content li .play-item span.icon_download:active {
+    background-position: -90px -60px
+}
+
+.search_content .list_content li .play-item span.icon_share {
+    margin-right: 0;
+    background-position: -300px 0
+}
+
+.search_content .list_content li .play-item span.icon_share:hover {
+    background-position: -300px -30px
+}
+
+.search_content .list_content li .play-item span.icon_share:active {
+    background-position: -300px -60px
+}
+
+#forbidPlay .contetText p.pFontColor,.dialogContent .contetText p.pFontColor,.download_popup .dialogContent .contetText p.pFontColor,.search_content .list_content li .width_t_li {
+    color: #999
+}
+
+.search_content .album_name,.search_content .song_name,.search_content .special_name,.search_content .width_s_li a,.ui-dialog-statusbar label:hover {
+    color: #333
+}
+
+.search_content .width_f_li {
+    width: 280px;
+    color: #333;
+}
+
+.search_content .width_f_li,.search_content .width_s_li,.search_content .width_t_li {
+    float: left;
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.search_content .width_s_li {
+    color: #333;
+    width: 280px
+}
+
+.search_content .width_t_li {
+    width: 100px;
+    padding-left: 40px;
+    text-align: center
+}
+
+.search_content .search_mv,.search_content .search_song,.search_content .search_special {
+    display: none
+}
+
+.clearfix{
+    zoom: 1;
+}
+
+li{
+    list-style: none;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+    <meta charset="utf-8"/>
+    <title>EQmusic</title>
+    <meta name="description"
+          content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="css/search_song.css" type="text/css"/>
+    <meta name="theme-color" content="#31c27c"/>
+    <link rel="shortcut icon" href="./images/EQmusic.png?max_age=2592000"/>
+    <script src="js/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+    <![endif]-->
+    <script>
+        $(document).ready(function () {
+            var json = JSON.parse(sessionStorage.getItem("Music"))
+
+            var html = "";
+            for (var k in json) {//遍历json
+                html +=
+                    "                                            <li class=\"clearfix\">\n" +
+                    "                                                <div class=\"width_f_li clearfix\">\n" +
+                    "                                                    <a class=\"song_name\" id=\"music\" title=\"" + json[k].songname + "\" href=\"#\">\n" +
+                    "                                                        <em>" + json[k].songname + "</em>\n" +
+                    "                                                    </a>\n" +
+                    "                                                </div>\n" +
+                    "                                                <div class=\"width_s_li\">\n" +
+                    "                                                    <a class=\"song_name\" title=\"" + json[k].songsinger + "\" href=\"#\">" + json[k].songsinger + "</a>\n" +
+                    "                                                </div>\n" +
+                    "                                                <div class=\"width_s_li\">\n" +
+                    "                                                    <a class=\"album_name\" title=\"" + json[k].album + "\" href=\"#\">\n" + json[k].album + "</a>\n" +
+                    "                                                </div>\n" +
+                    "                                                <div class=\"width_t_li\">" + json[k].time.slice(0,5) + "</div>\n" +
+                    "                                            </li>\n"
+            }
+            $(".list_content.clearfix").html(html)
+        })
+
+        $(document).on('click', '#music', function () {
+            var songname = $(this).children().html();
+            var songsinger = $(this).parent().parent().children().eq(1).children().html();
+
+            sessionStorage.setItem("songname",songname)
+            $("iframe",parent.document).attr("src","song-detail.html")
+        })
+    </script>
+</head>
+<body class="">
+<section class="vbox">
+    <section>
+        <section class="hbox stretch">
+            <section id="content">
+                <section class="hbox stretch">
+                    <section>
+                        <section class="vbox">
+                            <div class="search_content">
+                                <ul class="search_tab clearfix">
+                                    <li class="active" data-type="song">
+                                        <a id="song" href="#">单曲</a>
+                                    </li>
+                                </ul>
+                                <section class="search_song" id="search_song" style="display: block">
+                                    <section class="song_list">
+                                        <ul class="list_header clearfix">
+                                            <li class="width_f_li song_name_li">
+                                                <span class="search_icon checkall"></span>
+                                                歌曲名
+                                            </li>
+                                            <li class="width_s_li">歌手</li>
+                                            <li class="width_s_li">专辑</li>
+                                            <li class="width_t_li">时长</li>
+                                        </ul>
+                                        <section class="scrollable wrapper-lg" style="position: absolute;top: 90px;left: 400px;width: 2000px;height: 700px;">
+                                            <ul class="list_content clearfix">
+
+                                            </ul>
+                                        </section>
+                                    </section>
+                                </section>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open"
+                   data-target="#nav,html"></a>
+            </section>
+        </section>
+    </section>
+</section>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/music.js"></script>
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.js"></script>
+<!-- App -->
+<script src="js/app.js"></script>
+<script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/app.plugin.js"></script>
+<script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/demo.js"></script>
+<style>
+    .copyrights {
+        text-indent: -9999px;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        overflow: hidden;
+    }
+</style>
+</body>
+</html>

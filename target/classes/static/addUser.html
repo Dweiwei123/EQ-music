@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="res/css/amazeui.min.css">
+  <link rel="stylesheet" href="res/css/admin.css">
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="myplugs/js/plugs.js">
+  </script>
+
+  <style>
+    .admin-main{
+      padding-top: 0px;
+    }
+  </style>
+</head>
+<body>
+<div class="am-cf admin-main">
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-g">
+        <form class="am-form am-form-horizontal" action="insertUser" style="padding-top:30px;" data-am-validator>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              用户名 </label>
+            <div class="am-u-sm-9">
+              <input type="text" required placeholder="" name="username">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              密码 </label>
+            <div class="am-u-sm-9">
+              <input type="text" required placeholder="" name="password">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              性别 </label>
+            <div class="am-u-sm-9">
+              <input type="text" required placeholder="" name="sex">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              生日</label>
+            <div class="am-u-sm-9">
+              <input type="date" required placeholder="" name="birthday">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <div class="am-u-sm-9 am-u-sm-push-3">
+              <input type="submit" class="am-btn am-btn-success" id="sure" value="确认" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

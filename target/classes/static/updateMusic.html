@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="res/css/amazeui.min.css">
+  <link rel="stylesheet" href="res/css/admin.css">
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="myplugs/js/plugs.js">
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('[name="id"]').attr("value",window.parent.ID);
+      $('[name="songname"]').attr("value",window.parent.SONGNAME);
+      $('[name="songsinger"]').attr("value",window.parent.SONGSINGER);
+      $('[name="date"]').attr("value",window.parent.DATE);
+      $('[name="album"]').attr("value",window.parent.ALBUM);
+      $('[name="time"]').attr("value",window.parent.TIME);
+      $('[name="group"]').attr("value",window.parent.GROUP);
+    });
+  </script>
+
+  <style>
+    .admin-main{
+      padding-top: 0px;
+    }
+  </style>
+</head>
+<body>
+<div class="am-cf admin-main">
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-g">
+        <form class="am-form am-form-horizontal" action="updateMusic" style="padding-top:30px;" data-am-validator>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              ID </label>
+            <div class="am-u-sm-9">
+              <input type="text" value="" name="id" readonly="readonly">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              歌曲 </label>
+            <div class="am-u-sm-9">
+              <input type="text" required placeholder="" name="songname">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              歌手 </label>
+            <div class="am-u-sm-9">
+              <input type="text" required placeholder="" name="songsinger">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              发行年份 </label>
+            <div class="am-u-sm-9">
+              <input type="date" required placeholder="" name="date">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              专辑 </label>
+            <div class="am-u-sm-9">
+              <input type="text" required placeholder="" name="album">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              时长</label>
+            <div class="am-u-sm-9">
+              <input type="time" required placeholder="" name="time">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <label class="am-u-sm-3 am-form-label">
+              分类</label>
+            <div class="am-u-sm-9">
+              <input type="text" required placeholder="" name="group">
+            </div>
+          </div>
+          <div class="am-form-group">
+            <div class="am-u-sm-9 am-u-sm-push-3">
+              <input type="submit" class="am-btn am-btn-success" id="sure" value="确认" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

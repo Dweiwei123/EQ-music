@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+    <meta charset="utf-8"/>
+    <title>网Q在线音乐平台</title>
+    <meta name="description"
+          content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+    <meta name="theme-color" content="#31c27c"/>
+    <link rel="shortcut icon" href="./images/EQmusic.png?max_age=2592000"/>
+    <style>
+        li.on {
+            color: #0d88c1;
+        }
+    </style>
+    </style>
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+    <![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.js"></script>
+    <!-- App -->
+    <script src="js/app.js"></script>
+    <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/app.plugin.js"></script>
+    <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+    <script>
+        $(document).ready(function () {
+            sessionStorage.getItem("username");
+            $("#un").attr("value",sessionStorage.getItem("username"));
+            var user = $("input").val()
+            if(user == null){
+                $("textarea").attr("disabled","disabled")
+            }
+            else{
+                $(document).on('click','#criticize',function (){
+                    var comments = $("textarea").val();
+                    if(comments==""){
+                        alert("评论不能为空！")
+                    }else{
+                        $.ajax({
+                            type: "get",
+                            async: true,        //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                            url: "insertComment?comments="+comments+"&username=" + user + "&songname=" + sessionStorage.getItem("songname").toString(),    //请求发送到Servlet
+                            timeout: 10000,    //超时10s
+                            success: function (res) {
+                                if (res == 1) {
+                                    alert("评论成功！")
+                                    $.ajax({
+                                        type: "get",
+                                        async: true,        //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                                        url: "comment?songname=" + sessionStorage.getItem("songname"),    //请求发送到Servlet
+                                        timeout: 10000,    //超时10s
+                                        success: function (res) {
+                                            if (res != null) {
+                                                var html = "";
+                                                var json = JSON.parse(res)
+
+                                                for (var i in json) {//遍历json
+                                                    html += "<!-- comment-reply -->\n" +
+                                                        "                                <article class=\"comment-item\">\n" +
+                                                        "                                    <a class=\"pull-left thumb-sm\">" +
+                                                        "                                        <img src=\"images/m47.jpg\" class=\"img-circle\">" +
+                                                        "                                   </a>" +
+                                                        "                                    <section class=\"comment-body m-b\">\n" +
+                                                        "                                        <header>\n" +
+                                                        "                                            <a href=\"#\"><strong>" + json[i].username + "</strong></a>\n" +
+                                                        "                                            <span class=\"text-muted text-xs block m-t-xs\">\n" + json[i].date +
+                                                        "                          </span>\n" +
+                                                        "                                        </header>\n" +
+                                                        "                                        <div class=\"m-t-sm\">" + json[i].comments +
+                                                        "                                        </div>\n" +
+                                                        "                                    </section>\n" +
+                                                        "                                </article>"
+                                                }
+                                                $(".comment-list.block").html(html)
+                                            }
+                                        },
+                                        error: function (errorMsg) {
+                                            alert("数据请求失败!");
+                                        }
+                                    })
+                                }
+                                else
+                                    alert("评论失败！")
+                            },
+                            error: function (errorMsg) {
+                                alert("数据请求失败!");
+                            }
+                        })
+                    }
+                })
+            }
+        })
+
+        $.ajax({
+            type: "get",
+            async: true,        //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+            url: "comment?songname=" + sessionStorage.getItem("songname"),    //请求发送到Servlet
+            timeout: 10000,    //超时10s
+            success: function (res) {
+                if (res != null) {
+                    var html = "";
+                    var json = JSON.parse(res)
+
+                    for (var i in json) {//遍历json
+                        html += "<!-- comment-reply -->\n" +
+                            "                                <article class=\"comment-item\">\n" +
+                            "                                    <a class=\"pull-left thumb-sm\">" +
+                            "                                        <img src=\"images/m47.jpg\" class=\"img-circle\">" +
+                            "                                   </a>" +
+                            "                                    <section class=\"comment-body m-b\">\n" +
+                            "                                        <header>\n" +
+                            "                                            <a href=\"#\"><strong>" + json[i].username + "</strong></a>\n" +
+                            "                                            <span class=\"text-muted text-xs block m-t-xs\">\n" + json[i].date +
+                            "                          </span>\n" +
+                            "                                        </header>\n" +
+                            "                                        <div class=\"m-t-sm\">" + json[i].comments +
+                            "                                        </div>\n" +
+                            "                                    </section>\n" +
+                            "                                </article>"
+                    }
+                    $(".comment-list.block").html(html)
+                }
+            },
+            error: function (errorMsg) {
+                alert("数据请求失败!");
+            }
+        })
+
+        $.ajax({
+            type: "get",
+            async: true,        //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+            url: "musicInfo?songname=" + sessionStorage.getItem("songname"),    //请求发送到Servlet
+            timeout: 10000,    //超时10s
+            success: function (res) {
+                if (res != null) {
+                    var html = "";
+                    var json = JSON.parse(res)
+
+
+                    html += "<div style=\"position: absolute;top: 0px;left: 200px;width: 300px;height: 100%;text-align: center;font-size: 14px;line-height: 24px;\">\n" +
+                        "                        <div style=\"position: absolute;top: 50px;left: 0;width: 340px;height: 100%;text-align: center;font-size: 14px;line-height: 24px;\">\n" +
+                        "                            <a id=\"pic\"href=\"#\"\n" +
+                        "                               style=\"position: relative;display: block;width: 186px;height: 186px;margin: auto;\">\n" +
+                        "                                <img src=" + json.image + "\n" +
+                        "                                     style=\"vertical-align: middle;width: 186px;height: 186px;border: 0\">\n" +
+                        "                            </a>\n" +
+                        "                            <div style=\"white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;height: 28px;margin-top:15px\">\n" +
+                        "                                歌曲名:\n" +
+                        "                                <a href=\"#\" style=\"color: #000\">" + json.songname +
+                        "                                </a>\n" +
+                        "                            </div>\n" +
+                        "                            <div style=\"white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;height: 28px;\">\n" +
+                        "                                歌手:\n" +
+                        "                                <a href=\"#\" style=\"color: #000\">" + json.songsinger +
+                        "                                </a>\n" +
+                        "                            </div>\n" +
+                        "                            <div style=\"white-space: nowrap;width: 100%;overflow: hidden;text-overflow:ellipsis;height: 28px;\">\n" +
+                        "                                专辑:\n" +
+                        "                                <a href=\"#\">" + json.album + "</a>\n" +
+                        "                            </div>\n" +
+                        "                            <div style=\"width:340px;height:300px;margin:0 auto;overflow:hidden;\">\n" +
+                        "                                <ul id=\"lrclist\"\n" +
+                        "                                    style=\"transform: translateY(250px); transition-duration: 600ms;list-style:none;padding: 0;margin: 0;\">\n" +
+                        "                                    <!-- 保证歌词在正中间 -->\n"
+
+
+                    $("#picture").html(html)
+
+                    sessionStorage.setItem("url",json.url)
+
+                }
+            },
+            error: function (errorMsg) {
+                alert("数据请求失败!");
+            }
+        })
+
+    </script>
+</head>
+<body class="">
+<section class="vbox">
+    <section>
+        <section class="hbox stretch">
+            <section id="content">
+                <section class="vbox">
+                    <div id="picture"
+                         style="position: absolute;top: 0px;left: 200px;width: 300px;height: 100%;text-align: center;font-size: 14px;line-height: 24px;">
+                    </div>
+
+                    <h4 class="m-t-lg m-b" style="position: absolute;left: 1000px;top: 20px;">评论区</h4>
+                    <h4 class="m-t-lg m-b" style="position: absolute;left: 1000px;top: 340px;">评论</h4>
+                    <form style="position: absolute;left: 1050px;top: 420px;">
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-6">
+                                <label>用户名</label>
+                                <input type="text" id="un" class="form-control" placeholder="名字" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>评论</label>
+                            <textarea class="form-control" rows="5" placeholder="期待你的神评论!"
+                                      style="width: 400px"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button id="criticize" type="button" class="btn btn-success">提交评论</button>
+                        </div>
+                    </form>
+                    <section class="scrollable wrapper-lg"
+                             style="position: absolute;top: 80px;left: 1000px;width: 450px;height: 300px;">
+                        <div style="margin-right: 15px;margin-left: 15px;margin-top: 15px; width: 50%;">
+                            <section class="comment-list block">
+
+                            </section>
+
+                        </div>
+                    </section>
+                </section>
+                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open"
+                   data-target="#nav,html"></a>
+            </section>
+        </section>
+    </section>
+</section>
+
+<script>
+    $(document).on('click', '#pic', function () {
+        $("audio",parent.document).attr("src",sessionStorage.getItem("url"))
+        lrcJSON = {}
+        var str = "{"
+        $.ajax({
+            type: "get",
+            async: false,       //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+            url: "searchLrc?songname=" + sessionStorage.getItem("songname"),    //请求发送到Servlet
+            timeout: 10000,    //超时10s
+            success: function (res) {
+                if (res != null) {
+                    s = res.split('\n');
+                    for (var i = 0, len = s.length; i < len; i++) {
+                        var time = s[i].slice(0, 11);
+                        var lc = s[i].slice(11, -1);
+
+                        if (i == 0)
+                            s[i] = "\"" + time + "\"" + ":" + "\"" + lc + "\"";
+                        else
+                            s[i] = ',' + "\"" + time + "\"" + ":" + "\"" + lc + "\"";
+                        if (i == len - 2) {
+                            str += '}'
+                            break;
+                        }
+                        str += s[i]
+                    }
+
+                    lrcJSON = JSON.parse(str);
+                    console.log(lrcJSON)
+                }
+                else {
+                    alert("音乐库无此音乐");
+                }
+            },
+            error: function (errorMsg) {
+                alert("查询失败");
+            }
+        });
+
+        var lrcTime = [];//歌词对应的时间数组
+        var ul = $("#lrclist")[0];//获取ul
+
+        var i = 0;
+        $.each(lrcJSON, function (key, value) {//遍历lrc
+            lrcTime[i++] = parseFloat(key.substr(1, 3)) * 60 + parseFloat(key.substring(4, 10));//00:00.000转化为00.000格式
+            ul.innerHTML += "<li style='list-style:none;padding: 0;margin: 0;'><p style='overflow: hidden;text-overflow: ellipsis;height: 16px;line-height: 16px;-webkit-line-clamp: 1;-webkit-box-orient: vertical;display: -webkit-box;text-align: center;margin-top: 0;margin-bottom: 16px;'>" + lrcJSON[key] + "</p></li>";//ul里填充歌词
+        });
+        lrcTime[lrcTime.length] = lrcTime[lrcTime.length - 1] + 3;//如不另加一个结束时间，到最后歌词滚动不到最后一句
+
+
+        var $li = $("#lrclist>li");//获取所有li
+
+        var currentLine = 0;//当前播放到哪一句了
+        var currentTime;//当前播放的时间
+        var audio = window.parent.document.getElementById("audio");
+        if (audio.paused) {
+            audio.play();// 播放
+        } else {
+            audio.pause();// 暂停
+        }
+        var ppxx;//保存ul的translateY值
+
+        audio.ontimeupdate = function () {//audio时间改变事件
+            currentTime = audio.currentTime;
+            for (j = currentLine, len = lrcTime.length; j < len; j++) {
+                if (currentTime < lrcTime[j + 1] && currentTime > lrcTime[j]) {
+                    currentLine = j;
+                    ppxx = 250 - (currentLine * 32);
+                    ul.style.transform = "translateY(" + ppxx + "px)";
+                    $li.get(currentLine - 1).className = "";
+                    //console.log("on" + currentLine);
+                    $li.get(currentLine).className = "on";
+                    break;
+                }
+            }
+        };
+
+        audio.onseeked = function () {//audio进度更改后事件
+            currentTime = audio.currentTime;
+            //console.log("  off" + currentLine);
+            $li.get(currentLine).className = "";
+            for (k = 0, len = lrcTime.length; k < len; k++) {
+                if (currentTime < lrcTime[k + 1] && currentTime < lrcTime[k]) {
+                    currentLine = k;
+                    break;
+                }
+            }
+        }
+    })
+</script>
+<style>
+    .copyrights {
+        text-indent: -9999px;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        overflow: hidden;
+    }
+</style>
+</body>
+</html>

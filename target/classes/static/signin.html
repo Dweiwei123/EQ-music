@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+    <meta charset="utf-8" />
+    <title>EQmusic</title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/font.css" type="text/css" />
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <meta name="theme-color" content="#31c27c">
+    <link rel="shortcut icon" href="./images/EQmusic.png">
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <!-- App -->
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="js/app.plugin.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+    <![endif]-->
+
+    <script>
+        function fun() {
+            var username = $('[name="username"]').val();
+            var password = $('[name="password"]').val();
+
+            $.ajax({
+                type: "post",
+                async: true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                url: "login?username="+username+"&password="+password,    //请求发送到Servlet
+                timeout: 10000,    //超时10s
+                success: function (res) {
+                    if (res == 1) {
+                        alert("登陆成功")
+                        sessionStorage.setItem("username",username);
+                        location.href = "homePage.html";
+                    }
+                    else if(res == -1){
+                        alert("登录失败：密码错误")
+                    }
+                    else{
+                        alert("登录失败：未注册")
+                    }
+                },
+                error: function (errorMsg) {
+                    alert("数据请求失败!");
+                }
+            })
+        }
+
+        function fun2() {
+            var username = $('[name="rusername"]').val();
+            var sex = $('[name="rsex"]').val();
+            var password = $('[name="rpassword"]').val();
+            var againPassword = $('[name="ragainPassword"]').val();
+
+            $.ajax({
+                type: "post",
+                async: true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                url: "register?username="+username+"&sex="+sex+"&password="+password+"&againPassword="+againPassword,    //请求发送到Servlet
+                timeout: 10000,    //超时10s
+                success: function (res) {
+                    if (res == 1) {
+                        alert("注册成功")
+                        sessionStorage.setItem("username",username);
+                        location.href = "homePage.jsp";
+                    }
+                    else if(res == 2){
+                        alert("注册失败：两次密码不一致")
+                    }
+                    else if(res == 3){
+                        alert("注册失败：用户名或密码不能包含空格")
+                    }
+                    else if(res == 0){
+                        alert("注册失败：用户名或密码不能为空")
+                    }
+                    else{
+                        alert("注册失败：用户名已存在")
+                    }
+                },
+                error: function (errorMsg) {
+                    alert("数据请求失败!");
+                }
+            })
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#register").hide();
+            $("#rg").click(function(){
+                $("#login").hide();
+                $("#register").show();
+            });
+            $("#lg").click(function(){
+                $("#login").show();
+                $("#register").hide();
+            });
+        });
+    </script>
+</head>
+<body class="bg-info dker" style="height: 100%;width: 100%;position: relative">
+<video src="images/Hillsong Young & Free-Wake (Live from Summercamp)(蓝光).mp4" style="width: 100%;height: 100%;object-fit: cover;position:absolute;top: 0;left: 0;" autoplay="autoplay">
+
+</video>
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+    <div class="container aside-xl">
+        <a class="navbar-brand block" href="#"><span class="h1 font-bold">EQmusic</span></a>
+        <section class="m-b-lg" id="login">
+            <header class="wrapper text-center">
+                <strong>登录进入音乐殿堂</strong>
+            </header>
+            <form>
+                <div class="form-group">
+                    <input type="text" name="username" required="required" placeholder="用户名" class="form-control rounded input-lg text-center no-border">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" required="required" placeholder="密码" class="form-control rounded input-lg text-center no-border">
+                </div>
+                <button type="button" onclick="fun()" class="btn btn-lg  lt b-white b-2x btn-block btn-rounded"><i class="icon-arrow-right pull-right"></i><span class="m-r-n-lg">登录</span></button>
+                <div class="text-center m-t m-b"><a href="#"><small>忘记密码?</small></a></div>
+                <div class="line line-dashed"></div>
+                <p class="text-muted text-center"><small>未注册账号?</small></p>
+                <a id="rg" class="btn btn-lg  lt b-white b-2x btn-block btn-rounded">注册</a>
+            </form>
+        </section>
+        <section class="m-b-lg" id="register">
+            <header class="wrapper text-center">
+                <strong>注册登录探索有趣的事物</strong>
+            </header>
+            <form>
+                <div class="form-group">
+                    <input name="rusername" placeholder="用户名" class="form-control rounded input-lg text-center no-border">
+                </div>
+                <div class="form-group">
+                    <select name="rsex" class="form-control rounded input-lg text-center no-border">
+                        <option disabled>性别</option>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                    <style>
+                        select
+                        {
+                            text-align: center;
+                            text-align-last: center;
+                        }
+                    </style>
+                </div>
+                <div class="form-group">
+                    <input name="rpassword" type="password" placeholder="密码" class="form-control rounded input-lg text-center no-border">
+                </div>
+                <div class="form-group">
+                    <input name="ragainPassword" type="password" placeholder="请再次输入密码" class="form-control rounded input-lg text-center no-border">
+                </div>
+                <div class="checkbox i-checks m-b">
+                    <label class="m-l">
+                        <input type="checkbox" checked=""><i></i> 同意<a href="#">服务和协议</a>
+                    </label>
+                </div>
+                <button type="button" onclick="fun2()" class="btn btn-lg  lt b-white b-2x btn-block btn-rounded"><i class="icon-arrow-right pull-right"></i><span class="m-r-n-lg">注册</span></button>
+                <div class="line line-dashed"></div>
+                <p class="text-muted text-center"><small>已经拥有账号?</small></p>
+                <a id="lg" class="btn btn-lg  lt b-white b-2x btn-block btn-rounded">登录</a>
+            </form>
+        </section>
+    </div>
+    <footer id="footer">
+        <div class="text-center padder">
+            <p>
+                <small>Web app framework base on Bootstrap<br>&copy; 2021</small>
+            </p>
+        </div>
+    </footer>
+</section>
+
+</body>
+</html>
