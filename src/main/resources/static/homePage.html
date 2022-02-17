@@ -21,10 +21,10 @@
     <script type="text/javascript" src="js/jPlayer/demo.js"></script>
     <script>
         $(document).ready(function () {
-            if (sessionStorage.getItem("username") == null) {
-                alert("未登录 已拦截")
-                window.location.href="signin.html"
-            }
+            // if (sessionStorage.getItem("username") == null) {
+            //     alert("未登录 已拦截")
+            //     window.location.href="signin.html"
+            // }
             sessionStorage.getItem("username");
             $("#name").prepend(sessionStorage.getItem("username"));
         })
