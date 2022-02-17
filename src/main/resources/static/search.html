@@ -31,15 +31,15 @@
                 html +=
                     "                                            <li class=\"clearfix\">\n" +
                     "                                                <div class=\"width_f_li clearfix\">\n" +
-                    "                                                    <a class=\"song_name\" id=\"music\" title=\"" + json[k].songname + "\" href=\"#\">\n" +
+                    "                                                    <a class=\"song_name\" id=\"music\" title=\"" + json[k].songname + "\">\n" +
                     "                                                        <em>" + json[k].songname + "</em>\n" +
                     "                                                    </a>\n" +
                     "                                                </div>\n" +
                     "                                                <div class=\"width_s_li\">\n" +
-                    "                                                    <a class=\"song_name\" title=\"" + json[k].songsinger + "\" href=\"#\">" + json[k].songsinger + "</a>\n" +
+                    "                                                    <a class=\"song_name\" title=\"" + json[k].songsinger + "\" >" + json[k].songsinger + "</a>\n" +
                     "                                                </div>\n" +
                     "                                                <div class=\"width_s_li\">\n" +
-                    "                                                    <a class=\"album_name\" title=\"" + json[k].album + "\" href=\"#\">\n" + json[k].album + "</a>\n" +
+                    "                                                    <a class=\"album_name\" title=\"" + json[k].album + "\" >\n" + json[k].album + "</a>\n" +
                     "                                                </div>\n" +
                     "                                                <div class=\"width_t_li\">" + json[k].time.slice(0,5) + "</div>\n" +
                     "                                            </li>\n"
@@ -62,7 +62,7 @@
                             <div class="search_content">
                                 <ul class="search_tab clearfix">
                                     <li class="active" data-type="song">
-                                        <a id="song" href="#">单曲</a>
+                                        <a id="song">单曲</a>
                                     </li>
                                 </ul>
                                 <section class="search_song" id="search_song" style="display: block">
@@ -85,7 +85,7 @@
                                 </section>
                             </div>
 
-                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open"
+                <a class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open"
                    data-target="#nav,html"></a>
 
 </section>
