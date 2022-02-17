@@ -65,6 +65,9 @@
         $(document).on('click', '#mv', function () {
             $("iframe").attr("src","video.html");
         })
+        $(document).on('click', '#profile', function () {
+            $("iframe").attr("src","profile.html");
+        })
 
     </script>
 
@@ -92,11 +95,11 @@
         </div>
     </footer>
     <header class="bg-black lter header header-md navbar navbar-fixed-top-xs">
-        <div class="navbar-header aside bg-info nav-xs">
+        <div class="navbar-header aside bg-info nav-xs" style="background-color: #1ab667">
             <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
                 <i class="icon-list"></i>
             </a>
-            <a href="#" id="shouye" class="navbar-brand text-lt" style="background-color: #1ab667">
+            <a href="#" id="shouye" class="navbar-brand text-lt">
                 <i class="icon-earphones"></i>
                 <img src="images/logo.png" alt="." class="hide">
                 <span class="hidden-nav-xs m-l-sm">EQmusic</span>
@@ -138,7 +141,7 @@
                             <a href="#">设置</a>
                         </li>
                         <li>
-                            <a href="profile.html">个人中心</a>
+                            <a id="profile">个人中心</a>
                         </li>
                         <li class="divider"></li>
                         <li >
