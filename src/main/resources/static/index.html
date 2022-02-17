@@ -1,79 +1,79 @@
 <!DOCTYPE html>
-<html lang="en" class="app">
+<html class="app" lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>EQmusic</title>
-    <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/font.css" type="text/css" />
-    <link rel="stylesheet" href="css/app.css" type="text/css" />
-    <link rel="shortcut icon" href="./images/EQmusic.png">
+    <link href="js/jPlayer/jplayer.flat.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/animate.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font.css" rel="stylesheet" type="text/css"/>
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <link href="./images/EQmusic.png" rel="shortcut icon">
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
     <script src="js/slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
     <script src="js/app.plugin.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
-    <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-    <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+    <script src="js/jPlayer/jquery.jplayer.min.js" type="text/javascript"></script>
+    <script src="js/jPlayer/add-on/jplayer.playlist.min.js" type="text/javascript"></script>
+    <script src="js/jPlayer/demo.js" type="text/javascript"></script>
     <script>
 
-            // $.ajax({
-            //     type: "get",
-            //     async: true,
-            //     url: "randomMusic?",
-            //     timeout: 10000,
-            //     success: function (res) {
-            //         if (res != null) {
-            //             var html = "";
-            //             var json = JSON.parse(res)
-            //
-            //             for (var i in json) {//遍历json
-            //                 html += "<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">\n" +
-            //                     "                                        <div class=\"item\">\n" +
-            //                     "                                            <div class=\"pos-rlt\">\n" +
-            //                     "                                                <div class=\"item-overlay opacity r r-2x bg-black\">\n" +
-            //                     "                                                    <div class=\"text-info padder m-t-sm text-sm\">\n" +
-            //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
-            //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
-            //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
-            //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
-            //                     "                                                        <i class=\"fa fa-star-o text-muted\"></i>\n" +
-            //                     "                                                    </div>\n" +
-            //                     "                                                    <div class=\"center text-center m-t-n\">\n" +
-            //                     "                                                        <a href=\"#\" data-toggle=\"class\" id=\"click\">\n" +
-            //                     "                                                            <i class=\"icon-control-play i-2x text\" ></i>\n" +
-            //                     "                                                            <i class=\"icon-control-pause i-2x text-active\"></i>\n" +
-            //                     "                                                        </a>\n" +
-            //                     "                                                    </div>\n" +
-            //                     "                                                    <div class=\"bottom padder m-b-sm\">\n" +
-            //                     "                                                        <a href=\"#\" class=\"pull-right\">\n" +
-            //                     "                                                            <i class=\"fa fa-heart-o\"></i>\n" +
-            //                     "                                                        </a>\n" +
-            //                     "                                                        <a href=\"#\">\n" +
-            //                     "                                                            <i class=\"fa fa-plus-circle\"></i>\n" +
-            //                     "                                                        </a>\n" +
-            //                     "                                                    </div>\n" +
-            //                     "                                                </div>\n" +
-            //                     "                                                <a href=\"#\"><img src=\"" + json[i].image + "alt=\"\" class=\"r r-2x img-full\">\n" +
-            //                     "                                            </div>\n" +
-            //                     "                                            <div class=\"padder-v\">\n" +
-            //                     "                                                <a href=\"#\" class=\"text-ellipsis\">" + json[i].songname + "</a>\n" +
-            //                     "                                                <a href=\"#\" class=\"text-ellipsis text-xs text-muted\">" + json[i].songsinger + "</a>\n" +
-            //                     "                                            </div>\n" +
-            //                     "                                        </div>\n" +
-            //                     "                                    </div>"
-            //             }
-            //             $("#h").html(html)
-            //         }
-            //     },
-            //     error: function (errorMsg) {
-            //         alert("查询失败");
-            //     }
-            // });
+        // $.ajax({
+        //     type: "get",
+        //     async: true,
+        //     url: "randomMusic?",
+        //     timeout: 10000,
+        //     success: function (res) {
+        //         if (res != null) {
+        //             var html = "";
+        //             var json = JSON.parse(res)
+        //
+        //             for (var i in json) {//遍历json
+        //                 html += "<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">\n" +
+        //                     "                                        <div class=\"item\">\n" +
+        //                     "                                            <div class=\"pos-rlt\">\n" +
+        //                     "                                                <div class=\"item-overlay opacity r r-2x bg-black\">\n" +
+        //                     "                                                    <div class=\"text-info padder m-t-sm text-sm\">\n" +
+        //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
+        //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
+        //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
+        //                     "                                                        <i class=\"fa fa-star\"></i>\n" +
+        //                     "                                                        <i class=\"fa fa-star-o text-muted\"></i>\n" +
+        //                     "                                                    </div>\n" +
+        //                     "                                                    <div class=\"center text-center m-t-n\">\n" +
+        //                     "                                                        <a href=\"#\" data-toggle=\"class\" id=\"click\">\n" +
+        //                     "                                                            <i class=\"icon-control-play i-2x text\" ></i>\n" +
+        //                     "                                                            <i class=\"icon-control-pause i-2x text-active\"></i>\n" +
+        //                     "                                                        </a>\n" +
+        //                     "                                                    </div>\n" +
+        //                     "                                                    <div class=\"bottom padder m-b-sm\">\n" +
+        //                     "                                                        <a href=\"#\" class=\"pull-right\">\n" +
+        //                     "                                                            <i class=\"fa fa-heart-o\"></i>\n" +
+        //                     "                                                        </a>\n" +
+        //                     "                                                        <a href=\"#\">\n" +
+        //                     "                                                            <i class=\"fa fa-plus-circle\"></i>\n" +
+        //                     "                                                        </a>\n" +
+        //                     "                                                    </div>\n" +
+        //                     "                                                </div>\n" +
+        //                     "                                                <a href=\"#\"><img src=\"" + json[i].image + "alt=\"\" class=\"r r-2x img-full\">\n" +
+        //                     "                                            </div>\n" +
+        //                     "                                            <div class=\"padder-v\">\n" +
+        //                     "                                                <a href=\"#\" class=\"text-ellipsis\">" + json[i].songname + "</a>\n" +
+        //                     "                                                <a href=\"#\" class=\"text-ellipsis text-xs text-muted\">" + json[i].songsinger + "</a>\n" +
+        //                     "                                            </div>\n" +
+        //                     "                                        </div>\n" +
+        //                     "                                    </div>"
+        //             }
+        //             $("#h").html(html)
+        //         }
+        //     },
+        //     error: function (errorMsg) {
+        //         alert("查询失败");
+        //     }
+        // });
         $(document).on('click', '#refresh', function () {
             $("#h").hide();
             $.ajax({
@@ -142,7 +142,7 @@
                 timeout: 10000,
                 success: function (res) {
                     if (res != null) {
-                        $("#audio",parent.document).attr("src",res);
+                        $("#audio", parent.document).attr("src", res);
                         alert("正在播放：" + songname + "\n" + "     歌手：  " + songsinger);
                     }
                 },
@@ -163,7 +163,7 @@
                 timeout: 10000,    //超时10s
                 success: function (res) {
                     if (res != null) {
-                        $("#audio",parent.document).attr("src",res);
+                        $("#audio", parent.document).attr("src", res);
                         alert("正在播放：" + songname + "\n" + "      歌手：" + songsinger);
                     }
                 },
@@ -177,658 +177,654 @@
 </head>
 <body class="">
 <section class="vbox">
-    <section>
-        <section class="hbox stretch">
-            <section id="content">
-                <section class="hbox stretch">
-                    <section>
-                        <section class="vbox">
-                            <section class="scrollable padder-lg w-f-md" id="bjax-target">
-                                <a href="#" class="pull-right text-muted m-t-lg"  ><i class="bottom" id="refresh">换一批</i></a>
-                                <h2 class="font-thin m-b">发现<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+
+    <div class="scrollable padder-lg w-f-md" id="bjax-target" style="height:86%">
+        <a class="pull-right text-muted m-t-lg" href="#"><i class="bottom" id="refresh">换一批</i></a>
+        <h2 class="font-thin m-b">发现<span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
                     <span class="bar1 a1 bg-primary lter"></span>
                     <span class="bar2 a2 bg-info lt"></span>
                     <span class="bar3 a3 bg-success"></span>
                     <span class="bar4 a4 bg-warning dk"></span>
                     <span class="bar5 a5 bg-danger dker"></span>
                   </span></h2>
-                                <div class="row row-sm" id="h">
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="bottom">
-                                                    <span class="badge bg-info m-l-sm m-b-sm">02:20</span>
-                                                </div>
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/mood.jpg" alt="" class="r r-2x img-full"></a><!--点击播放音乐-->
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">Mood</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">24Goldn/iann dior</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right active" data-toggle="class">
-                                                            <i class="fa fa-heart-o text"></i>
-                                                            <i class="fa fa-heart text-active text-danger"></i>
-                                                        </a>
-                                                        <a href="#" data-toggle="class">
-                                                            <i class="fa fa-plus-circle text"></i>
-                                                            <i class="fa fa-check-circle text-active text-info"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/God's%20Plan($Gold%20remix).jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">God's Plan($Gold remix)</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">$Gold</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/山海.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">山海</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">草东没有派对</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="top">
+        <div class="row row-sm" id="h">
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="bottom">
+                            <span class="badge bg-info m-l-sm m-b-sm">02:20</span>
+                        </div>
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/mood.jpg"></a><!--点击播放音乐-->
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">Mood</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">24Goldn/iann dior</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right active" data-toggle="class" href="#">
+                                    <i class="fa fa-heart-o text"></i>
+                                    <i class="fa fa-heart text-active text-danger"></i>
+                                </a>
+                                <a data-toggle="class" href="#">
+                                    <i class="fa fa-plus-circle text"></i>
+                                    <i class="fa fa-check-circle text-active text-info"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full"
+                                         src="images/God's%20Plan($Gold%20remix).jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">God's Plan($Gold remix)</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">$Gold</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/山海.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">山海</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">草东没有派对</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="top">
                             <span class="pull-right m-t-n-xs m-r-sm text-white">
                               <i class="fa fa-bookmark i-lg"></i>
                             </span>
-                                                </div>
-                                                <a href="#"><img src="images/允许部分艺术家富起来.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">允许部分艺术家先富起来</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">二手玫瑰</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/Sold%20Out.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">Sold Out</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">Hawk Nelson/Jonathan Steingard Diamonds</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="top">
-                                                    <span class="pull-right m-t-sm m-r-sm badge bg-info">6</span>
-                                                </div>
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/Better%20Now.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">Better Now</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">BLANKS</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="top">
-                                                    <span class="pull-right m-t-sm m-r-sm badge bg-white">12</span>
-                                                </div>
-                                                <a href="#"><img src="images/浪子回头.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">浪子回头</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">茄子蛋</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/浪流连.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">浪流连</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">茄子蛋</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/unravel.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">Unravel</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">TK from 凛として時雨</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" class="" id="click">
-                                                            <i class="icon-control-play i-2x text"></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right" data-toggle="class">
-                                                            <i class="fa fa-heart-o text"></i>
-                                                            <i class="fa fa-heart text-active text-danger"></i>
-                                                        </a>
-                                                        <a href="#" class="active" data-toggle="class">
-                                                            <i class="fa fa-plus-circle text"></i>
-                                                            <i class="fa fa-check-circle text-active text-info"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="http://p4.music.126.net/E5JYsO4DR4_Y-CdidpUVCw==/109951164473460772.jpg?param=300x300" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">Love is Gone </a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">Slander/Dylan Matthew</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/Lover%20Boy.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">Lover Boy 88</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">Phum Viphurit、Higher Brothers</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                        <div class="item">
-                                            <div class="pos-rlt">
-                                                <div class="item-overlay opacity r r-2x bg-black">
-                                                    <div class="text-info padder m-t-sm text-sm">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o text-muted"></i>
-                                                    </div>
-                                                    <div class="center text-center m-t-n">
-                                                        <a href="#" data-toggle="class" id="click">
-                                                            <i class="icon-control-play i-2x text" ></i>
-                                                            <i class="icon-control-pause i-2x text-active"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="bottom padder m-b-sm">
-                                                        <a href="#" class="pull-right">
-                                                            <i class="fa fa-heart-o"></i>
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="fa fa-plus-circle"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <a href="#"><img src="images/爱就一个字.jpg" alt="" class="r r-2x img-full"></a>
-                                            </div>
-                                            <div class="padder-v">
-                                                <a href="#" class="text-ellipsis">爱就一个字</a>
-                                                <a href="#" class="text-ellipsis text-xs text-muted">李巍V仔</a>
-                                            </div>
-                                        </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/允许部分艺术家富起来.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">允许部分艺术家先富起来</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">二手玫瑰</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/Sold%20Out.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">Sold Out</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">Hawk Nelson/Jonathan Steingard Diamonds</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="top">
+                            <span class="pull-right m-t-sm m-r-sm badge bg-info">6</span>
+                        </div>
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/Better%20Now.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">Better Now</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">BLANKS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="top">
+                            <span class="pull-right m-t-sm m-r-sm badge bg-white">12</span>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/浪子回头.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">浪子回头</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">茄子蛋</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/浪流连.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">浪流连</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">茄子蛋</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/unravel.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">Unravel</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">TK from 凛として時雨</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a class="" data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" data-toggle="class" href="#">
+                                    <i class="fa fa-heart-o text"></i>
+                                    <i class="fa fa-heart text-active text-danger"></i>
+                                </a>
+                                <a class="active" data-toggle="class" href="#">
+                                    <i class="fa fa-plus-circle text"></i>
+                                    <i class="fa fa-check-circle text-active text-info"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img
+                                alt=""
+                                class="r r-2x img-full" src="http://p4.music.126.net/E5JYsO4DR4_Y-CdidpUVCw==/109951164473460772.jpg?param=300x300"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">Love is Gone </a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">Slander/Dylan Matthew</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/Lover%20Boy.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">Lover Boy 88</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">Phum Viphurit、Higher Brothers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="item">
+                    <div class="pos-rlt">
+                        <div class="item-overlay opacity r r-2x bg-black">
+                            <div class="text-info padder m-t-sm text-sm">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o text-muted"></i>
+                            </div>
+                            <div class="center text-center m-t-n">
+                                <a data-toggle="class" href="#" id="click">
+                                    <i class="icon-control-play i-2x text"></i>
+                                    <i class="icon-control-pause i-2x text-active"></i>
+                                </a>
+                            </div>
+                            <div class="bottom padder m-b-sm">
+                                <a class="pull-right" href="#">
+                                    <i class="fa fa-heart-o"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"><img alt="" class="r r-2x img-full" src="images/爱就一个字.jpg"></a>
+                    </div>
+                    <div class="padder-v">
+                        <a class="text-ellipsis" href="#">爱就一个字</a>
+                        <a class="text-ellipsis text-xs text-muted" href="#">李巍V仔</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="font-thin">新歌</h3>
+                <div class="row row-sm">
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        <h3 class="font-thin">新歌</h3>
-                                        <div class="row row-sm">
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/蜜雪冰城.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">蜜雪冰城主题曲（官方版）</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">蜜雪冰城</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/New%20boy.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">New Boy</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">房东的猫/陈婧霖</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/peaches.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">Peaches</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">Justin Bieber/Daniel Caesar/Giveon</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/love%20story.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">Love Story</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">Taylor Swift</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/charlie%20puth.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">We don't talk anymore</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">Charlie Puth/Selena Gomez</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/告白气球.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">告白气球</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">周杰伦</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/薛之谦.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">怪咖</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">薛之谦</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-sm-3">
-                                                <div class="item">
-                                                    <div class="pos-rlt">
-                                                        <div class="item-overlay opacity r r-2x bg-black">
-                                                            <div class="center text-center m-t-n">
-                                                                <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <a href="#"><img src="images/Lemon.png" alt="" class="r r-2x img-full"></a>
-                                                    </div>
-                                                    <div class="padder-v">
-                                                        <a href="#" class="text-ellipsis">Lemon</a>
-                                                        <a href="#" class="text-ellipsis text-xs text-muted">米津玄师</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/蜜雪冰城.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">蜜雪冰城主题曲（官方版）</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">蜜雪冰城</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
                                     </div>
-                                    <div class="col-md-5">
-                                        <h3 class="font-thin">飙升榜</h3>
-                                        <div class="list-group bg-white list-group-lg no-bg auto">
-                                            <a href="#" class="list-group-item clearfix">
-                                                <span class="pull-right h2 text-muted m-l">1</span>
-                                                <span class="pull-left thumb-sm avatar m-r">
-                            <img src="images/mood.jpg" alt="...">
+                                </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/New%20boy.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">New Boy</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">房东的猫/陈婧霖</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
+                                    </div>
+                                </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/peaches.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">Peaches</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">Justin Bieber/Daniel
+                                    Caesar/Giveon</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
+                                    </div>
+                                </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/love%20story.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">Love Story</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">Taylor Swift</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
+                                    </div>
+                                </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/charlie%20puth.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">We don't talk anymore</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">Charlie Puth/Selena Gomez</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
+                                    </div>
+                                </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/告白气球.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">告白气球</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">周杰伦</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
+                                    </div>
+                                </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/薛之谦.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">怪咖</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">薛之谦</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="item">
+                            <div class="pos-rlt">
+                                <div class="item-overlay opacity r r-2x bg-black">
+                                    <div class="center text-center m-t-n">
+                                        <a href="#" id="click"><i class="fa fa-play-circle i-2x"></i></a>
+                                    </div>
+                                </div>
+                                <a href="#"><img alt="" class="r r-2x img-full" src="images/Lemon.png"></a>
+                            </div>
+                            <div class="padder-v">
+                                <a class="text-ellipsis" href="#">Lemon</a>
+                                <a class="text-ellipsis text-xs text-muted" href="#">米津玄师</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h3 class="font-thin">飙升榜</h3>
+                <div class="list-group bg-white list-group-lg no-bg auto">
+                    <a class="list-group-item clearfix" href="#">
+                        <span class="pull-right h2 text-muted m-l">1</span>
+                        <span class="pull-left thumb-sm avatar m-r">
+                            <img alt="..." src="images/mood.jpg">
                           </span>
-                                                <span class="clear">
+                        <span class="clear">
                             <span>Mood</span>
                             <small class="text-muted clear text-ellipsis">24Goldn/iann dior</small>
                           </span>
-                                            </a>
-                                            <a href="#" class="list-group-item clearfix">
-                                                <span class="pull-right h2 text-muted m-l">2</span>
-                                                <span class="pull-left thumb-sm avatar m-r">
-                            <img src="images/see%20you%20again.png" alt="...">
+                    </a>
+                    <a class="list-group-item clearfix" href="#">
+                        <span class="pull-right h2 text-muted m-l">2</span>
+                        <span class="pull-left thumb-sm avatar m-r">
+                            <img alt="..." src="images/see%20you%20again.png">
                           </span>
-                                                <span class="clear">
+                        <span class="clear">
                             <span>See you again</span>
                             <small class="text-muted clear text-ellipsis">Charlie Puth/Wiz Khalifa</small>
                           </span>
-                                            </a>
-                                            <a href="#" class="list-group-item clearfix">
-                                                <span class="pull-right h2 text-muted m-l">3</span>
-                                                <span class="pull-left thumb-sm avatar m-r">
-                            <img src="images/吃醋.png" alt="...">
+                    </a>
+                    <a class="list-group-item clearfix" href="#">
+                        <span class="pull-right h2 text-muted m-l">3</span>
+                        <span class="pull-left thumb-sm avatar m-r">
+                            <img alt="..." src="images/吃醋.png">
                           </span>
-                                                <span class="clear">
+                        <span class="clear">
                             <span>ヤキモチ（吃醋）</span>
                             <small class="text-muted clear text-ellipsis">高桥优(たかはし ゆう)</small>
                           </span>
-                                            </a>
-                                            <a href="#" class="list-group-item clearfix">
-                                                <span class="pull-right h2 text-muted m-l">4</span>
-                                                <span class="pull-left thumb-sm avatar m-r">
-                            <img src="images/起风了.png" alt="...">
+                    </a>
+                    <a class="list-group-item clearfix" href="#">
+                        <span class="pull-right h2 text-muted m-l">4</span>
+                        <span class="pull-left thumb-sm avatar m-r">
+                            <img alt="..." src="images/起风了.png">
                           </span>
-                                                <span class="clear">
+                        <span class="clear">
                             <span>起风了</span>
                             <small class="text-muted clear text-ellipsis">买辣椒用券</small>
                           </span>
-                                            </a>
-                                            <a href="#" class="list-group-item clearfix">
-                                                <span class="pull-right h2 text-muted m-l">5</span>
-                                                <span class="pull-left thumb-sm avatar m-r">
-                            <img src="images/i%20hate%20u%20i%20love%20u.png" alt="...">
+                    </a>
+                    <a class="list-group-item clearfix" href="#">
+                        <span class="pull-right h2 text-muted m-l">5</span>
+                        <span class="pull-left thumb-sm avatar m-r">
+                            <img alt="..." src="images/i%20hate%20u%20i%20love%20u.png">
                           </span>
-                                                <span class="clear">
+                        <span class="clear">
                             <span>I hate u,i love u</span>
                             <small class="text-muted clear text-ellipsis">Gnash/Olivia O'Brien</small>
                           </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row m-t-lg m-b-lg">
-                                    <div class="col-sm-6">
-                                        <div class="bg-primary wrapper-md r">
-                                            <a href="signin.html">
-                                                <span class="h4 m-b-xs block"><i class=" icon-user-follow i-lg"></i> 登录或者创建一个新账号</span>
-                                                <span class="text-muted">当您登录或创建帐户时，请与您的朋友保存并共享播放列表.</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <!--音乐播放器-->
-                        </section>
-                    </section>
-                </section>
-                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
-            </section>
-        </section>
-    </section>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row m-t-lg m-b-lg">
+            <div class="col-sm-6">
+                <div class="bg-primary wrapper-md r">
+                    <a href="signin.html">
+                        <span class="h4 m-b-xs block"><i class=" icon-user-follow i-lg"></i> 登录或者创建一个新账号</span>
+                        <span class="text-muted">当您登录或创建帐户时，请与您的朋友保存并共享播放列表.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--音乐播放器-->
+
+    <a class="hide nav-off-screen-block" data-target="#nav,html" data-toggle="class:nav-off-screen,open" href="#"></a>
+
+
 </section>
 
 </body>

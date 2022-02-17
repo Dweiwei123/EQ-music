@@ -21,10 +21,10 @@
     <script type="text/javascript" src="js/jPlayer/demo.js"></script>
     <script>
         $(document).ready(function () {
-            if (sessionStorage.getItem("username") == null) {
-                alert("未登录 已拦截")
-                window.location.href="signin.html"
-            }
+            // if (sessionStorage.getItem("username") == null) {
+            //     alert("未登录 已拦截")
+            //     window.location.href="signin.html"
+            // }
             sessionStorage.getItem("username");
             $("#name").prepend(sessionStorage.getItem("username"));
         })
@@ -71,7 +71,7 @@
 </head>
 <body class="">
 <section class="vbox">
-    <footer class="footer bg-success dker" style="position: absolute;bottom: 0;width: 100%;height:70px;margin-left: 70px">
+    <footer class="footer bg-success dker" style="position: absolute;bottom: 0;width: 100%;height:70px;">
         <div id="jp_container_N" class="jp-video-270p" style="height:70px">
             <div class="jp-type-playlist">
                 <div id="jplayer_N" class="jp-jplayer hide" style="width: 480px; height: 270px;"><img id="jp_poster_0" style="width: 480px; height: 270px; display: none;"><audio id="jp_audio_0" preload="metadata"></audio><video id="jp_video_0" preload="metadata" style="width: 0; height: 0;"></video></div>
@@ -159,7 +159,7 @@
             </ul>
         </div>
     </header>
-    <section>
+
         <section class="hbox stretch">
             <!-- .aside -->
             <aside class="bg-black dk nav-xs aside hidden-print" id="nav">
@@ -206,10 +206,9 @@
                 </section>
             </aside>
             <!-- /.aside -->
-            <iframe src="index.html" width="100%" style="border: none;bottom:10px" height="800" border="none">
+            <iframe src="index.html" width="100%" style="border: none;bottom:10px" height="100%" border="none">
             </iframe>
         </section>
-    </section>
 </section>
 
 </body>
