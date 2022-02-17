@@ -31,6 +31,49 @@
     <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
     <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+    <script>
+        $(document).on('click', '#taylor', function () {
+            var songname = $(this).parent().parent().children().eq(2).children().eq(0).html();
+            var songsinger = "Taylor Swift";
+
+            $.ajax({
+                type: "get",
+                async: true,
+                url: "playMusic?songname=" + songname,    //请求发送到Servlet
+                timeout: 10000,
+                success: function (res) {
+                    if (res != null) {
+                        $("#audio", parent.document).attr("src", res);
+                        alert("正在播放：" + songname + "\n" + "     歌手：  " + songsinger);
+                    }
+                },
+                error: function (errorMsg) {
+                    alert("音乐库无此音乐：" + songname);
+                }
+            });
+        })
+
+        $(document).on('click', '#else', function () {
+            var songname = $(this).parent().parent().children().eq(2).children().eq(0).html();
+            var songsinger = $(this).parent().parent().children().eq(2).children().eq(1).html();
+
+            $.ajax({
+                type: "get",
+                async: true,
+                url: "playMusic?songname=" + songname,    //请求发送到Servlet
+                timeout: 10000,
+                success: function (res) {
+                    if (res != null) {
+                        $("#audio", parent.document).attr("src", res);
+                        alert("正在播放：" + songname + "\n" + "     歌手：  " + songsinger);
+                    }
+                },
+                error: function (errorMsg) {
+                    alert("音乐库无此音乐：" + songname);
+                }
+            });
+        })
+    </script>
 </head>
 <body>
 <section class="vbox">
@@ -64,7 +107,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -79,7 +122,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -94,7 +137,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -109,7 +152,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -124,7 +167,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -139,7 +182,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -154,7 +197,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -169,7 +212,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -184,7 +227,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -199,7 +242,7 @@
                                                     <a><i class="icon-close"></i></a>
                                                 </div>
                                                 <a class="jp-play-me m-r-sm pull-left">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="taylor" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <div class="clear text-ellipsis">
@@ -218,7 +261,7 @@
                                         <ul class="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -231,7 +274,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -244,7 +287,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -257,7 +300,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -270,7 +313,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -283,7 +326,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -296,7 +339,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -309,7 +352,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -322,7 +365,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -335,7 +378,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -348,7 +391,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
@@ -361,7 +404,7 @@
                                             </li>
                                             <li class="list-group-item clearfix">
                                                 <a class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                    <i class="icon-control-play text"></i>
+                                                    <i id="else" class="icon-control-play text"></i>
                                                     <i class="icon-control-pause text-active"></i>
                                                 </a>
                                                 <a class="pull-left thumb-sm m-r">
